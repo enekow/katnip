@@ -14,9 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Kitty.  If not, see <http://www.gnu.org/licenses/>.
-'''
-.. warning:: This module is not tested yet.
-'''
+
 from __future__ import absolute_import
 import serial
 from kitty.core import KittyException
@@ -57,6 +55,7 @@ class SerialTarget(ServerTarget):
         self.baudrate = baudrate
         self.timeout = timeout
         self.open_at = open_at
+        self.serial = None
         if self.open_at not in ['setup', 'pre_test']:
             raise KittyException('open_at must be either "setup" or "pre_test"')
 
